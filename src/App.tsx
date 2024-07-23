@@ -1,25 +1,39 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Pokedex from "./Pokedex";
 import SearchPokemon from "./SearchPokemon";
 import { useEffect, useState } from "react";
 import "./App.css";
 import { fetchPokemonByNumberOrName } from "./services/services";
 import PokemonStats from "./PokemonStats";
-
-interface Pokemon {
-  name: string;
-  id: number;
-  sprites: { front_default: string };
-}
+import NavBarBtn from "./NavBarBtn";
+import { Pokemon } from "./types.ts";
 
 function App() {
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
-  const [searchInput, setSearchInput] = useState<number | string>(1);
+  const [currentPokemonId, setCurrentPokemonId] = useState<number>(1);
   const [pokedex, setPokedex] = useState<Pokemon[]>([]);
   const [isCatching, setIsCatching] = useState<boolean>(false); // Estado para el modal
 
-  const handleSearch = (input: string | number) => {
-    setSearchInput(input);
+  const handleSearch = async (input: string | number) => {
+    let id: number | null = null;
+    let name: string | null = null;
+
+    if (typeof input === "number") {
+      id = input;
+    } else {
+      name = (input as string).toLowerCase();
+    }
+
+    try {
+      const data = await fetchPokemonByNumberOrName(name || id);
+      setPokemon(data);
+      if (id) {
+        setCurrentPokemonId(id);
+      }
+    } catch (error) {
+      console.error("Error fetching Pokémon:", error);
+      setPokemon(null);
+    }
   };
 
   const handleCatchPokemon = () => {
@@ -40,15 +54,31 @@ function App() {
     }
   };
 
+  const handleNavigate = (direction: "next" | "previous") => {
+    if (!pokemon) return;
+
+    let nextId: number;
+    if (direction === "next") {
+      nextId = pokemon.id + 1;
+    } else {
+      nextId = pokemon.id - 1;
+    }
+
+    if (nextId < 1) nextId = 1;
+    if (nextId > 1025) nextId = 1025;
+
+    setCurrentPokemonId(nextId);
+  };
+
   const handleRemovePokemon = (id: number) => {
     setPokedex(pokedex.filter((poke) => poke.id !== id));
   };
 
   useEffect(() => {
-    fetchPokemonByNumberOrName(searchInput).then((data) => {
+    fetchPokemonByNumberOrName(currentPokemonId).then((data) => {
       setPokemon(data);
     });
-  }, [searchInput]);
+  }, [currentPokemonId]);
 
   console.log(pokemon);
 
@@ -56,10 +86,17 @@ function App() {
     <>
       <header>
         <li>
-          <Link to="/">Search Pokemon</Link>
+          <NavBarBtn to="/" title="Search" icon="/public/img/search.svg" />
         </li>
         <li>
-          <Link to="/pokedex">Pokedex</Link>
+          <NavBarBtn
+            to="/pokedex"
+            title="Pokedex"
+            icon="/public/img/pokedex.svg"
+          />
+        </li>
+        <li>
+          <NavBarBtn to="/stats" title="Stats" icon="/public/img/stats.svg" />
         </li>
       </header>
       <Routes>
@@ -71,6 +108,7 @@ function App() {
               onCatchPokemon={handleCatchPokemon}
               pokemon={pokemon}
               isCatching={isCatching}
+              onNavigate={handleNavigate}
             />
           }
         />

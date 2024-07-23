@@ -7,6 +7,36 @@
 .container {
   position: relative;
 }
+
+.pokemon-img {
+  padding: 15px;
+  width: 220px;
+  height: auto;
+  min-height: 300px;
+}
+
+.pokemon-resume {
+  padding: 20px;
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+  h1 {
+    text-align: center;
+    font-size: x-large;
+  }
+}
+
+.pokemon-name {
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+  }
+}
+
 .gif-container {
   position: absolute;
   top: calc(50% - 100px);
@@ -33,5 +63,39 @@
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+
+.add-pokedex {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 4px 20px;
+  background-color: rgb(255, 111, 0);
+  border-radius: 4px;
+  border: none;
+  box-shadow: -2px 3px black;
+  &:hover {
+    scale: 105%;
+    box-shadow: -4px 6px black;
+  }
+  .pokeball-btn {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.navigation-buttons {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  button {
+    background-color: transparent;
+    border: none;
+    img {
+      height: 75px;
+      opacity: 0.5;
+    }
   }
 }

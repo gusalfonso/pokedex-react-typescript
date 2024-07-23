@@ -1,14 +1,35 @@
 .pokemon-card {
   width: 150px;
+  min-height: 225px;
   background-color: white;
   border-radius: 10px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
   padding: 10px;
-}
-.remove {
-  background-color: transparent;
-  border: none;
-  padding: 10px;
+  img {
+    width: 75px;
+  }
+  .remove {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 20px;
+    background-color: rgb(255, 111, 0);
+    border-radius: 4px;
+    border: none;
+    box-shadow: -2px 3px black;
+    &:hover {
+      scale: 105%;
+      box-shadow: -4px 6px black;
+    }
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
 }

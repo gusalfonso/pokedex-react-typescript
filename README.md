@@ -6,41 +6,41 @@ Conforme conversamos, gostamos do nosso bate papo, e para prosseguirmos com o pr
 
 ### Filtro de busca do pokémon
 
-* Pesquisa através do nome ou número do pokémon
+* Pesquisa através do nome ou número do pokémon ✅
 
 ### Botão para adicionar (capturar) o novo pokémon na Pokédex
 
-* A lista de sua Pokédex deve estar vazia a princípio.
+* A lista de sua Pokédex deve estar vazia a princípio. ✅
 
 ### Listagem dos pokémons adicionados a Pokédex
 
-* Nome e imagem com limite de 10 pokémons por exibição, deverá conter uma paginação em grid de 10/10.
+* Nome e imagem com limite de 10 pokémons por exibição, deverá conter uma paginação em grid de 10/10. 
 
 ### Detalhe do Pokémon
 
 Botão ou mecanismo similar para abertura de uma nova página com detalhes do quadrinho.
 
 A página de detalhe deve conter
-*  Nome
-* Imagem
-* Tamanho
-* Lista de tipos
-* Velocidade
-* Defesa
-* Ataque
-* Hp
-* Passos da evolução
+*  Nome ✅
+* Imagem ✅
+* Tamanho 
+* Lista de tipos ✅
+* Velocidade ✅
+* Defesa ✅
+* Ataque ✅
+* Hp ✅
+* Passos da evolução ✅
 
 
 ## Botão para excluir o pokémon
 
-* Opção para excluir o pokémon que foi adicionado na Pokédex
+* Opção para excluir o pokémon que foi adicionado na Pokédex ✅
 
 ## Extras
 
 
 * Boas práticas de codificação
-* Cobertura de testes
+* Cobertura de testes 
 * Aplicação responsiva
 * Design similar ao de uma pokédex
 
