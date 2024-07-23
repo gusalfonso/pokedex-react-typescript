@@ -1,12 +1,7 @@
 import "./PokemonCard.css";
-import { Pokemon } from "./types";
+import { CardProps } from "./types";
 
-interface PokedexProps {
-  pokemon: Pokemon[];
-  onRemovePokemon: (id: number) => void;
-}
-
-function PokemonCard({ pokemon, onRemovePokemon }: PokedexProps) {
+function PokemonCard({ pokemon, onRemovePokemon }: CardProps) {
   return (
     <article key={pokemon.id} className="pokemon-card">
       <h2>

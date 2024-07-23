@@ -80,6 +80,7 @@ export interface PokemonStatsProps {
 
 export interface PokedexProps {
   pokedex: Pokemon[];
+  pokemon?: Pokemon[];
   onRemovePokemon: (id: number) => void;
 }
 
@@ -92,4 +93,9 @@ export interface HorizontalBarChartProps {
     weight: number;
     height: number;
   };
+}
+
+export interface CardProps {
+  pokemon: Pokemon;
+  onRemovePokemon: (id: number) => void;
 }

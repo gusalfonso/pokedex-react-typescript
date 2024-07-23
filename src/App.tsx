@@ -15,7 +15,7 @@ function App() {
   const [isCatching, setIsCatching] = useState<boolean>(false); // Estado para el modal
 
   const handleSearch = async (input: string | number) => {
-    let id: number | null = null;
+    let id: number | null = 1;
     let name: string | null = null;
 
     if (typeof input === "number") {

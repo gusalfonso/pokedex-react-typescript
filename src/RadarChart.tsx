@@ -6,7 +6,9 @@ function HorizontalBarChart({ stats }: HorizontalBarChartProps) {
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
-    if (!svgRef.current) return;
+    const svgElement = svgRef.current;
+    if (!svgElement) return;
+    // if (!svgRef.current) return;
 
     const data = [
       { label: "HP", value: stats.hp },
@@ -79,7 +81,7 @@ function HorizontalBarChart({ stats }: HorizontalBarChartProps) {
     svg.selectAll(".y-axis line").style("stroke", "#ddd");
 
     return () => {
-      d3.select(svgRef.current).selectAll("*").remove();
+      d3.select(svgElement).selectAll("*").remove();
     };
   }, [stats]);
 
