@@ -10,6 +10,9 @@
   gap: 20px;
   margin: 0 auto;
   padding: 0 10px;
+  p {
+    text-align: center;
+  }
 }
 
 .pokemon-card {

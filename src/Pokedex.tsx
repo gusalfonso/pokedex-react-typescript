@@ -29,19 +29,21 @@ function Pokedex({ pokedex, onRemovePokemon }: PokedexProps) {
   return (
     <>
       <h1 className="titulo">Pokedex</h1>
-      <div className="pokedex-grid">
-        {pokedex.length === 0 ? (
-          <p>No has atrapado ningún Pokémon</p>
-        ) : (
-          currentPokemons.map((pokemon) => (
+
+      {pokedex.length === 0 ? (
+        <p>You haven't caught any Pokémon</p>
+      ) : (
+        <div className="pokedex-grid">
+          {currentPokemons.map((pokemon) => (
             <PokemonCard
               key={pokemon.id}
               pokemon={pokemon}
               onRemovePokemon={onRemovePokemon}
             />
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
+
       <div className="pagination">
         <button onClick={handlePreviousPage} disabled={currentPage === 1}>
           Anterior
