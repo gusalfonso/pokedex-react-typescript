@@ -1,0 +1,14 @@
+.pokemon-card {
+  width: 150px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+.remove {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+}
