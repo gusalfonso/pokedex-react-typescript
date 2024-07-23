@@ -42,7 +42,7 @@ function SearchPokemon({
     <div className="container">
       {isCatching && (
         <div className="gif-container">
-          <img src="/public/img/pokeball-removebg-preview.png" alt="catching" />
+          <img src="/img/pokeball-removebg-preview.png" alt="catching" />
         </div>
       )}
       <div className="search-container">
@@ -80,7 +80,7 @@ function SearchPokemon({
       <div className="pokedex-container">
         <button className="add-pokedex" onClick={onCatchPokemon}>
           <img
-            src="/public/img/pokeball-removebg-preview.png"
+            src="/img/pokeball-removebg-preview.png"
             alt="pokeball-button"
             className="pokeball-btn"
           />
@@ -93,14 +93,14 @@ function SearchPokemon({
           onClick={() => handleNavigate("previous")}
           disabled={!pokemon} // Desactivar si no hay Pokémon
         >
-          <img src="/public/img/left-arrow.svg" alt="left-arrow" />
+          <img src="/img/left-arrow.svg" alt="left-arrow" />
         </button>
         <button
           className="nav-button"
           onClick={() => handleNavigate("next")}
           disabled={!pokemon} // Desactivar si no hay Pokémon
         >
-          <img src="/public/img/right-arrow.svg" alt="right-arrow" />
+          <img src="/img/right-arrow.svg" alt="right-arrow" />
         </button>
       </div>
     </div>

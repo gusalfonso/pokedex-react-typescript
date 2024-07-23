@@ -86,17 +86,13 @@ function App() {
     <>
       <header>
         <li>
-          <NavBarBtn to="/" title="Search" icon="/public/img/search.svg" />
+          <NavBarBtn to="/" title="Search" icon="/img/search.svg" />
         </li>
         <li>
-          <NavBarBtn
-            to="/pokedex"
-            title="Pokedex"
-            icon="/public/img/pokedex.svg"
-          />
+          <NavBarBtn to="/pokedex" title="Pokedex" icon="/img/pokedex.svg" />
         </li>
         <li>
-          <NavBarBtn to="/stats" title="Stats" icon="/public/img/stats.svg" />
+          <NavBarBtn to="/stats" title="Stats" icon="/img/stats.svg" />
         </li>
       </header>
       <Routes>
