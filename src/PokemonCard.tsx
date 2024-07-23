@@ -17,7 +17,7 @@ function PokemonCard({ pokemon, onRemovePokemon }: CardProps) {
         alt={pokemon.name}
       />
       <button className="remove" onClick={() => onRemovePokemon(pokemon.id)}>
-        <img src="/public/img/trash.svg" alt="drop" />
+        <img src="/img/trash.svg" alt="drop" />
         Drop
       </button>
     </article>
