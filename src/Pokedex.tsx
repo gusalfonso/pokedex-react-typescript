@@ -49,7 +49,7 @@ function Pokedex({ pokedex, onRemovePokemon }: PokedexProps) {
           Anterior
         </button>
         <span>
-          Página {currentPage} de {totalPages}
+          Página {currentPage} de {totalPages + 1}
         </span>
         <button onClick={handleNextPage} disabled={currentPage === totalPages}>
           Siguiente
