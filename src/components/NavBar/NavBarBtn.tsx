@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./NavBarBtn.css";
-import { BtnProps } from "./types";
+import { BtnProps } from "../../types";
 
 function NavBarButton({ icon, title, to }: BtnProps) {
   return (

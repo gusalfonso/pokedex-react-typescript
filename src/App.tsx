@@ -1,18 +1,18 @@
 import { Route, Routes } from "react-router-dom";
-import Pokedex from "./Pokedex";
-import SearchPokemon from "./SearchPokemon";
+import Pokedex from "./components/Pokedex/Pokedex";
+import SearchPokemon from "./components/Search/SearchPokemon";
 import { useEffect, useState } from "react";
 import "./App.css";
 import { fetchPokemonByNumberOrName } from "./services/services";
-import PokemonStats from "./PokemonStats";
-import NavBarBtn from "./NavBarBtn";
+import PokemonStats from "./components/Stats/PokemonStats";
+import NavBarBtn from "./components/NavBar/NavBarBtn";
 import { Pokemon } from "./types.ts";
 
 function App() {
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
   const [currentPokemonId, setCurrentPokemonId] = useState<number>(1);
   const [pokedex, setPokedex] = useState<Pokemon[]>([]);
-  const [isCatching, setIsCatching] = useState<boolean>(false); // Estado para el modal
+  const [isCatching, setIsCatching] = useState<boolean>(false);
 
   const handleSearch = async (input: string | number) => {
     let id: number | null = 1;

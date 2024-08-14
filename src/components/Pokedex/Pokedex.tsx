@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Pokedex.css";
-import PokemonCard from "./PokemonCard";
-import { PokedexProps } from "./types";
+import PokemonCard from "../Card/PokemonCard";
+import { PokedexProps } from "../../types";
 
 const ITEMS_PER_PAGE = 10;
 

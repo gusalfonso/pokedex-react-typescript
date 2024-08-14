@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import "./SearchPokemon.css";
-import { Pokemon } from "./types";
+import { Pokemon } from "../../types";
 
 interface SearchPokemonProps {
   onSearch: (input: string | number) => void;

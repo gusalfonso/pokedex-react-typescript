@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./PokemonStats.css";
-import { fetchPokemonByNumberOrName } from "./services/services";
-import { Pokemon, PokemonStatsProps } from "./types";
-import HorizontalBarChart from "./RadarChart";
+import { fetchPokemonByNumberOrName } from "../../services/services";
+import { Pokemon, PokemonStatsProps } from "../../types";
+import HorizontalBarChart from "../RadarChart/RadarChart";
 
 function PokemonStats({ pokemon }: PokemonStatsProps) {
   const [pokemonData, setPokemonData] = useState<Pokemon | null>(pokemon);

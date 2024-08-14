@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { HorizontalBarChartProps } from "./types";
+import { HorizontalBarChartProps } from "../../types";
 import * as d3 from "d3";
 
 function HorizontalBarChart({ stats }: HorizontalBarChartProps) {

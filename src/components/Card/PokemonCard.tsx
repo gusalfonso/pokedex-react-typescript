@@ -1,5 +1,5 @@
 import "./PokemonCard.css";
-import { CardProps } from "./types";
+import { CardProps } from "../../types";
 
 function PokemonCard({ pokemon, onRemovePokemon }: CardProps) {
   return (
